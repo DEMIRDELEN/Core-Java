@@ -1,6 +1,7 @@
 package lambda_functional_programming01;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -40,6 +41,8 @@ public class Fp01 {
         tekrarsızTekElemanlarinKupunuYazdir(l);
         System.out.println();
         tekrarsizCiftElemanlarinKareToplami(l);
+        System.out.println();
+        getMaxEleman01(l);
     }
 
     //1) Ardışık list elementlerini aynı satırda aralarında boşluk bırakarak yazdıraN bir method oluşturun.(Structured)
@@ -90,6 +93,7 @@ public class Fp01 {
     public static void tekrarsızTekElemanlarinKupunuYazdir(List<Integer> l) {
 
         l.stream().distinct().filter(t -> t % 2 != 0).map(t -> t * t * t).forEach(t -> System.out.print(t + " "));
+
     }
 
     //5) Tekrarsız çift elementlerin karelerinin toplamını hesaplayan bir method oluşturun.
@@ -115,6 +119,11 @@ public class Fp01 {
         Integer max = list.stream().distinct().reduce(Integer.MIN_VALUE, (t, u) -> t > u ? t : u);
 
         System.out.println(max);
+
+        // List<Integer> ages = Arrays.asList(25, 30, 45, 28, 32);
+        // int computedAges = ages.parallelStream().reduce(0, (a, b) -> a + b, Integer::sum);
+        // System.out.println(computedAges);
+        // işlem farklı çekirdekte yapılıyor
     }
 
     //2. Yol:

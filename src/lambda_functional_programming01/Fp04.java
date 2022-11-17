@@ -19,8 +19,10 @@ public class Fp04 {
     //1) 7'den 100'e kadar integer değerlerinin toplamını bulan bir method oluşturun.
 
     public static Integer yedidenYuzeSayilarToplami() {
-        Integer toplam = IntStream.range(7, 101).reduce(Math::addExact).getAsInt();
+        Integer toplam = IntStream.range(7, 100).reduce(Math::addExact).getAsInt();
         return toplam;
+
+
     }
 
     //2.yol
